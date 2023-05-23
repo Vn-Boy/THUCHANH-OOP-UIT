@@ -1,0 +1,18 @@
+Số lượng câu
+3
+Câu sau khi được sắp xếp
+This a is sample text. 
+Số từ trong câu
+5
+Câu sau khi được sắp xếp
+ It be can program. statistics test text the to used 
+Số từ trong câu
+11
+Câu sau khi được sắp xếp
+ The and count in number of program sentences text. the this will words 
+Số từ trong câu
+14
+Các từ xuất hiện nhiều nhất
+'text'
+'the'
+

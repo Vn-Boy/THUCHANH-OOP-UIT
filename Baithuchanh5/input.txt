@@ -1,0 +1,1 @@
+This is a sample text. It can be used to test the text statistics program. The program will count the number of sentences and words in this text.
