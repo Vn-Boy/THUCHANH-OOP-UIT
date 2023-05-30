@@ -7,11 +7,11 @@
 using namespace std;
 int main()
 {
-    ifstream input("Your_file_path_input"); // Note: Directories and files SHOULD be separated by double backslashes, so the program can work!
+    ifstream input("Your_file_path_input"); // Note: Đường dẫn files phải được cách bởi hai dấu gạch // thì chương trình mới hoạt động
     ofstream output("Your_file_path_output");
     string line;
     vector<string> sentences;
-    cout << input.is_open() << "\n";
+    cout << input.is_open() << "\n"; // Kiểm tra xem liệu file có được mở hay không?
     while (getline(input, line))
     {
         size_t pos = 0;
