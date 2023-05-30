@@ -1,8 +1,8 @@
 #include "header.h"
-#include "bai2.h"
-#include "bai3.h"
-#include "bai4.h"
-#include "bai5.h"
+#include "bai2.cpp"
+#include "bai3.cpp"
+#include "bai4.cpp"
+#include "bai5.cpp"
 
 void displaymenu()
 {

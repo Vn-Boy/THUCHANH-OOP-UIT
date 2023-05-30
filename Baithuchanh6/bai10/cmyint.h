@@ -9,11 +9,9 @@ private:
 public:
     MYINT();
     MYINT(int val);
-
     MYINT operator+(const MYINT &other) const;
     MYINT operator-(const MYINT &other) const;
-
     operator int() const;
 };
 
-#endif // MYINT_H
+#endif

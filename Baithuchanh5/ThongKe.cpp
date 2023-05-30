@@ -7,8 +7,8 @@
 using namespace std;
 int main()
 {
-    ifstream input("C:\\C++\\Thuchanhopp\\Baithuchanh5\\input.txt");
-    ofstream output("C:\\C++\\Thuchanhopp\\Baithuchanh5\\output.txt");
+    ifstream input("Your_file_path_input"); // Note: Directories and files SHOULD be separated by double backslashes, so the program can work!
+    ofstream output("Your_file_path_output");
     string line;
     vector<string> sentences;
     cout << input.is_open() << "\n";
@@ -30,7 +30,7 @@ int main()
         vector<string> words;
         size_t pos = 0;
         string temp = sentence;
-        while ((pos = temp.find_first_of(' ', pos)) != string::npos) // đoạn expression này trả về vị trí có " "
+        while ((pos = temp.find_first_of(' ', pos)) != string::npos)
         {
             words.push_back(temp.substr(0, pos));
             temp = temp.substr(pos + 1);
@@ -38,7 +38,7 @@ int main()
         }
         words.push_back(temp);
 
-        for (const auto &word : words) // hash các key từ vào table
+        for (const auto &word : words)
         {
             word_count[word]++;
         }

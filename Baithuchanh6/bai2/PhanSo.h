@@ -9,7 +9,7 @@ private:
     double mauso;
 
 public:
-    PhanSo(/* args */);
+    PhanSo();
     ~PhanSo();
     friend ostream &operator<<(ostream &os, const PhanSo &ps);
     friend istream &operator>>(istream &is, PhanSo &ps);

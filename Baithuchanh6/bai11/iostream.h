@@ -3,13 +3,13 @@
 
 #include <iostream>
 using namespace std;
-class PrintText
+class Print
 {
 public:
-    PrintText() { cout << "Entering the Hello program saying...\n"; }
-    ~PrintText()
+    Print() { cout << "Entering the Hello program saying...\n"; }
+    ~Print()
     {
         cout << "Exiting...\n";
     }
 } Print_text;
-#endif // PRINTTEXT_H
+#endif

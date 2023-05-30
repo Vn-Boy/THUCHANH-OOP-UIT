@@ -6,7 +6,7 @@ CString::CString()
 }
 CString::~CString()
 {
-    delete str;
+    delete[] str;
 }
 int CString::length()
 {

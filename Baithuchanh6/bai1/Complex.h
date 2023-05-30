@@ -22,7 +22,6 @@ public:
         return out;
     }
     ~ComplexNumber();
-
     ComplexNumber operator+(const ComplexNumber &c) const;
     ComplexNumber operator-(const ComplexNumber &c) const;
     double absValue() const;

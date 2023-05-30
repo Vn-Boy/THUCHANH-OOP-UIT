@@ -1,5 +1,5 @@
 #include "header.h"
-#include "bai1.h"
+#include "bai1.cpp"
 int x1, x2, y1, y2;
 void setX1Y1(int x1_, int y1_)
 {
