@@ -1,97 +1,145 @@
 #include "DongVat.cpp"
 #include <vector>
+
+int generateRandom(int n)
+{
+    return rand() % n;
+}
 class Bo : public DongVat
 {
 public:
-    Bo(bool sinhcon, int soluongloai, string tiengkeu, bool ChoSua, int minLitSua, int maxLitSua) : DongVat(sinhcon, soluongloai, tiengkeu, ChoSua)
+    Bo(int sl)
     {
-        setSolitsua(randomLitSua(minLitSua, maxLitSua));
-    };
-    void printTiengKeu()
-    {
-        cout << "Tieng keu cua con Bo\n";
-        DongVat::printTiengKeu();
+        soLuong = sl;
+        tiengKeu = "Bo bo";
     }
-    void chosua()
+    void SinhCon()
     {
-        cout << "Con bo\n";
-        DongVat::chosua();
+        for (int i = 0; i < soLuong; i++)
+        {
+            soCon += generateRandom(10) + 1;
+        }
+        cout << "So luong con cua con bo la " << soCon << "\n";
     }
-    void soluong()
+    void ChoSua()
     {
-        DongVat::soluong();
+        for (int i = 0; i < soLuong; i++)
+        {
+            soLitSua += generateRandom(21);
+        }
+        cout << "SO lit sua cho bu la " << soLitSua << "\n";
     }
-};
-class De : public DongVat
-{
-public:
-    De(bool sinhcon, int soluongloai, string tiengkeu, bool ChoSua, int minLitSua, int maxLitSua) : DongVat(sinhcon, soluongloai, tiengkeu, ChoSua)
+    void Keu()
     {
-        setSolitsua(randomLitSua(minLitSua, maxLitSua));
-    };
-    void printTiengKeu()
-    {
-        cout << "Tieng keu cua con De\n";
-        DongVat::printTiengKeu();
-    }
-    void chosua()
-    {
-        cout << "Con de\n";
-        DongVat::chosua();
-    }
-    void soluong()
-    {
-        DongVat::soluong();
+        cout << tiengKeu << endl;
     }
 };
+
 class Cuu : public DongVat
 {
 public:
-    Cuu(bool sinhcon, int soluongloai, string tiengkeu, bool ChoSua, int minLitSua, int maxLitSua) : DongVat(sinhcon, soluongloai, tiengkeu, ChoSua)
+    Cuu(int sl)
     {
-        setSolitsua(randomLitSua(minLitSua, maxLitSua));
-    };
-    void printTiengKeu()
-    {
-        cout << "Tieng keu cua con Cuu\n";
-        DongVat::printTiengKeu();
+        soLuong = sl;
+        tiengKeu = "Beee";
     }
-    void chosua()
+    void SinhCon()
     {
-        cout << "Con cuu\n";
-        DongVat::chosua();
+        for (int i = 0; i < soLuong; i++)
+        {
+            soCon += generateRandom(10) + 1;
+        }
+        cout << "So luong con cua con cuu la " << soCon << "\n";
     }
-    void soluong()
+    void ChoSua()
     {
-        DongVat::soluong();
+        for (int i = 0; i < soLuong; i++)
+        {
+            soLitSua += generateRandom(6);
+        }
+        cout << "SO lit sua cho bu la " << soLitSua << "\n";
+    }
+    void Keu()
+    {
+        cout << tiengKeu << endl;
     }
 };
-class QuanLyDongVat
+
+class De : public DongVat
+{
+public:
+    De(){};
+    De(int sl)
+    {
+        soLuong = sl;
+        tiengKeu = "Meee";
+    }
+    void SinhCon()
+    {
+        for (int i = 0; i < soLuong; i++)
+        {
+            soCon += generateRandom(10) + 1;
+        }
+        cout << "So luong con cua con de la " << soCon << "\n";
+    }
+    void ChoSua()
+    {
+        for (int i = 0; i < soLuong; i++)
+        {
+            soLitSua += generateRandom(11);
+        }
+        cout << "SO lit sua cho bu la " << soLitSua << "\n";
+    }
+    void Keu()
+    {
+        cout << tiengKeu << endl;
+    }
+};
+class NongTrai
 {
 private:
-    int soluongloai;
+    DongVat *giasuc[3];
 
 public:
-    vector<DongVat *> dongvat;
-    QuanLyDongVat(int soluongloai) : soluongloai(soluongloai)
+    NongTrai() {}
+    void NhapSoLuongGiaSuc()
     {
-        dongvat.resize(soluongloai);
+        int slBo, slCuu, slDe;
+        cout << "Nhap so luong bo: ";
+        cin >> slBo;
+        cout << "Nhap so luong cuu: ";
+        cin >> slCuu;
+        cout << "Nhap so luong de: ";
+        cin >> slDe;
+        giasuc[0] = new Bo(slBo);
+        giasuc[1] = new Cuu(slCuu);
+        giasuc[2] = new De(slDe);
     }
-    void XuatThongTin()
+    void TiengKeuKhiDoi()
     {
-        for (int i = 0; i < soluongloai; i++)
+        cout << "Tieng keu khi doi: \n";
+        for (int i = 0; i < 3; i++)
         {
-            dongvat[i]->printTiengKeu();
-            dongvat[i]->chosua();
-            dongvat[i]->soluong();
+            giasuc[i]->Keu();
+        }
+    }
+    void ThongKeSauMotLuaSinhVaMotLuotChoSua()
+    {
+        cout << "Thong ke sau mot lua sinh va mot lua cho sua: \n";
+        for (int i = 0; i < 3; i++)
+        {
+            giasuc[i]->SinhCon();
+            giasuc[i]->ChoSua();
         }
     }
 };
+
 int main()
 {
-    QuanLyDongVat quanly(3);
-    quanly.dongvat[0] = new Bo(true, 10, "Moo", true, 0, 20);
-    quanly.dongvat[1] = new De(true, 20, "Meh", true, 0, 10);
-    quanly.dongvat[2] = new Cuu(true, 30, "Baa", true, 0, 5);
-    quanly.XuatThongTin();
+
+    srand(time(0));
+    NongTrai nongTrai;
+    nongTrai.NhapSoLuongGiaSuc();
+    nongTrai.TiengKeuKhiDoi();
+    nongTrai.ThongKeSauMotLuaSinhVaMotLuotChoSua();
 }

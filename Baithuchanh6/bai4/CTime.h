@@ -1,4 +1,4 @@
-#include "../C++/Thuchanhopp/Baithuchanh6/bai3/CTimeSpan.h"
+#include "./CTimeSpan.h"
 #include <iostream>
 using namespace std;
 #ifndef CTIME_H

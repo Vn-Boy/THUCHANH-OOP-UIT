@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// bài thực hành này chưa yêu cầu dùng overload nên mình không dùng!
 class CTimeSpan
 {
 private:

@@ -7,7 +7,7 @@
 using namespace std;
 int main()
 {
-    ifstream input("Your_file_path_input"); // Note: Directories and files SHOULD be separated by double backslashes, so the program can work!
+    ifstream input("Your_file_path_input"); // Note: Đường dẫn chứa file input của bạn, lưu ý là đường dẫn phải có 2 dấu gạch // thì file mới nhận
     ofstream output("Your_file_path_output");
     string line;
     vector<string> sentences;

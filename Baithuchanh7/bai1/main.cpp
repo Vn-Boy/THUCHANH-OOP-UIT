@@ -47,6 +47,14 @@ public:
     {
         nhanvien.resize(soluong);
     };
+    ~QuanlyNhanVien()
+    {
+        for (int i = 0; i < soluong; i++)
+        {
+            delete nhanvien[i];
+        }
+        nhanvien.clear();
+    }
     void xuat()
     {
         for (int i = 0; i < soluong; i++)

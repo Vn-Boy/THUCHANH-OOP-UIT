@@ -71,7 +71,6 @@ void Point::quay(double deg)
 void Point::input()
 {
     double x, y;
-
     cin >> x >> y;
     setX(x);
     setY(y);
