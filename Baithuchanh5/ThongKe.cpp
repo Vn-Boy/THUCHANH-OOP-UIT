@@ -7,11 +7,15 @@
 using namespace std;
 int main()
 {
+<<<<<<< HEAD
     ifstream input("Your_file_path_input"); // Note: Đường dẫn chứa file input của bạn, lưu ý là đường dẫn phải có 2 dấu gạch // thì file mới nhận
+=======
+    ifstream input("Your_file_path_input"); // Note: Đường dẫn files phải được cách bởi hai dấu gạch // thì chương trình mới hoạt động
+>>>>>>> 6eb53c928721ba3c6693f16b71443470627d48ab
     ofstream output("Your_file_path_output");
     string line;
     vector<string> sentences;
-    cout << input.is_open() << "\n";
+    cout << input.is_open() << "\n"; // Kiểm tra xem liệu file có được mở hay không?
     while (getline(input, line))
     {
         size_t pos = 0;

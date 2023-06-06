@@ -1,4 +1,4 @@
-# Bài thực hành lập tình hướng đối tượng (OOP) trường UIT
+# Tổng hợp bài thực hành lập tình hướng đối tượng (OOP) trường UIT
 
 ## Bài giải tham khảo và tài liệu thực hành
 
