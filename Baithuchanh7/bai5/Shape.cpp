@@ -152,17 +152,15 @@ public:
 
 int main()
 {
-    int main()
+
+    ShapeManager manager;
+
+    Shape *shape = manager.createShape();
+    if (shape != nullptr)
     {
-        ShapeManager manager;
-
-        Shape *shape = manager.createShape();
-        if (shape != nullptr)
-        {
-            shape->printInfo();
-            delete shape;
-        }
-
-        return 0;
+        shape->printInfo();
+        delete shape;
     }
+
+    return 0;
 }

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <utility>
 using namespace std;
 class Person
 {
@@ -15,6 +14,10 @@ public:
     vector<Person *> subordinates;
     double balance;
     vector<pair<double, double>> interestRate;
+    string getName()
+    {
+        return this->name;
+    }
     Person()
     {
         this->balance = 0;
@@ -54,8 +57,8 @@ public:
     {
         return 0;
     };
-    virtual void payInterest(Person *person) = 0;   // trả tiền lãi
-    virtual void payCommission(Person *person) = 0; // trả tiền hoa hồng
+    virtual void payInterest(Person *person) = 0;
+    virtual void payCommission(Person *person) = 0;
     virtual void printInfo(){
 
     };
@@ -63,7 +66,6 @@ public:
 class Director : public Person
 {
 public:
-    int call = 1;
     void payInterest(Person *person)
     {
         for (int i = 0; i < person->interestRate.size() - 1; i++)
@@ -72,7 +74,6 @@ public:
             person->balance += person->interestRate[i].first * person->interestRate[i].second;
             this->balance -= person->interestRate[i].first * person->interestRate[i].second;
         }
-        call++;
     };
     void payCommission(Person *person){};
     void printInfo()
@@ -100,7 +101,6 @@ public:
     void payInterest(Person *person){};
     void payCommission(Person *director)
     {
-
         double commissionRate = 0.05 + level * 0.03;
         double Total = 0;
         for (Person *p : subordinates)
@@ -285,11 +285,11 @@ public:
             if (j > 0)
             {
                 this->payMonthly();
+                this->promoteAndUpgrade();
             }
             j++;
         }
     }
-
     void payMonthly()
     {
         vector<Person *> queue;
@@ -308,7 +308,6 @@ public:
             }
         }
     }
-
     void promoteAndUpgrade()
     {
         vector<Person *> queue;

@@ -1,4 +1,4 @@
-#include "DongVat.cpp"
+#include "DongVat.h"
 #include <vector>
 
 int generateRandom(int n)
@@ -137,8 +137,31 @@ public:
 int main()
 {
     srand(time(0));
+    // cách dùng không liên kết động
+    int slBo, slCuu, slDe;
+    cout << "Nhap so luong bo: ";
+    cin >> slBo;
+    cout << "Nhap so luong cuu: ";
+    cin >> slCuu;
+    cout << "Nhap so luong de: ";
+    cin >> slDe;
+    Bo bo(slBo);
+    Cuu cuu(slCuu);
+    De de(slDe);
+    bo.Keu();
+    cuu.Keu();
+    de.Keu();
+    bo.SinhCon();
+    bo.ChoSua();
+    cuu.SinhCon();
+    cuu.ChoSua();
+    de.SinhCon();
+    de.ChoSua();
+    // cách dùng liên kết động
+
     NongTrai nongTrai;
     nongTrai.NhapSoLuongGiaSuc();
     nongTrai.TiengKeuKhiDoi();
     nongTrai.ThongKeSauMotLuaSinhVaMotLuotChoSua();
 }
+// dùng liên kết động sẽ giảm tải việc khó khăn viết code từng phương thức cho các lớp con qua đo thể hiện rõ được tính đa hình của oop

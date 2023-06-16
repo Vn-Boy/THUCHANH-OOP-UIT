@@ -1,4 +1,5 @@
-
+#ifndef DONGVATGIASUC_H
+#define DONGVATGIASUC_H
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -25,3 +26,4 @@ public:
     virtual void ChoSua() = 0;
     virtual void Keu() = 0;
 };
+#endif
